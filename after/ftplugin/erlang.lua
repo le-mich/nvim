@@ -1,9 +1,6 @@
--- start erlang language server
-require('lspconfig').erlangls.setup(require('coq').lsp_ensure_capabilities())
-
--- reset indentation
-vim.bo.tabstop = 4
-vim.bo.softtabstop = 4
-vim.bo.shiftwidth = 4
-vim.bo.expandtab = false
+-- set indentation
+vim.bo.tabstop = 2
+vim.bo.softtabstop = 2
+vim.bo.shiftwidth = 2
+vim.bo.expandtab = true
 
