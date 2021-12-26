@@ -11,8 +11,12 @@ vim.api.nvim_set_keymap('n', '<esc><esc>', ':silent! nohls<cr>', {noremap = true
 -- enable mouse interactions
 vim.o.mouse = 'a'
 
+-- split placing
+vim.o.splitbelow = true
+vim.o.splitright = true
+
 -- copy to clipboard
-vim.cmd('set clipboard+=unnamedplus')
+vim.o.clipboard = vim.o.clipboard .. 'unnamedplus'
 
 -- tabs are four columns wide
 vim.bo.tabstop = 4
@@ -22,9 +26,12 @@ vim.bo.shiftwidth = 4
 -- use tabs for indentation
 vim.bo.expandtab = false
 
+-- undo sessions
+vim.bo.undofile = true
+
 -- show hybrid line numbers
-vim.o.number = true
-vim.o.relativenumber = true
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- wrap lines
 vim.o.wrap = true
@@ -39,13 +46,23 @@ vim.o.linebreak = true
 vim.o.showmatch = true
 
 -- line height
-vim.o.linespace = 2
+vim.o.linespace = 4
 
 -- enable auto pairs
 require('mini.pairs').setup()
 
+-- enable surround pairs
+require('mini.surround').setup()
+
+-- enable startup page
+require('mini.starter').setup()
+
 -- python executable
 vim.g.python3_host_prog = '/usr/bin/python'
+
+-- remove numbers in terminal
+vim.api.nvim_command('autocmd TermOpen * set nonumber')
+vim.api.nvim_command('autocmd TermOpen * set norelativenumber')
 
 -- return to last edited position when opening a file
 vim.api.nvim_command('autocmd BufReadPost * silent! normal! g`"zv')

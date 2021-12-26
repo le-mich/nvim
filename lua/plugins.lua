@@ -14,6 +14,9 @@ require('paq') {
 	-- line numbers
 	'jeffkreeftmeijer/vim-numbertoggle';
 
+	-- better terminal
+	'vimlab/split-term.vim';
+
 	-- code autoformatting
 	'Chiel92/vim-autoformat';
 
