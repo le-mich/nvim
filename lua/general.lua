@@ -6,7 +6,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- remove search result highlight with <esc><esc>
-vim.api.nvim_set_keymap('n', '<esc><esc>', ':silent! nohls<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<esc><esc>', ':silent! nohls<CR>', {noremap = true})
 
 -- enable mouse interactions
 vim.o.mouse = 'a'
@@ -48,25 +48,22 @@ vim.o.showmatch = true
 -- line height
 vim.o.linespace = 4
 
+-- python executable
+vim.g.python3_host_prog = '/usr/bin/python'
+
 -- enable auto pairs
 require('mini.pairs').setup()
 
 -- enable surround pairs
 require('mini.surround').setup()
 
--- enable startup page
-require('mini.starter').setup()
-
--- python executable
-vim.g.python3_host_prog = '/usr/bin/python'
-
 -- remove numbers in terminal
-vim.api.nvim_command('autocmd TermOpen * set nonumber')
-vim.api.nvim_command('autocmd TermOpen * set norelativenumber')
+vim.cmd('autocmd TermOpen * set nonumber')
+vim.cmd('autocmd TermOpen * set norelativenumber')
 
 -- return to last edited position when opening a file
-vim.api.nvim_command('autocmd BufReadPost * silent! normal! g`"zv')
+vim.cmd('autocmd BufReadPost * silent! normal! g`"zv')
 
 -- remove trailing whitespaces on write
-vim.api.nvim_command('autocmd BufWritePre * %s/\\s\\+$//e')
+vim.cmd('autocmd BufWritePre * %s/\\s\\+$//e')
 

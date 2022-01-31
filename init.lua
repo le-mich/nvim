@@ -1,4 +1,4 @@
---- il-mich Neovim config for nvim
+-- il-mich Neovim config for nvim
 --
 --
 --                `........`
@@ -31,5 +31,8 @@
 require('general')
 require('plugins')
 require('style')
+require('startup')
+require('sessions')
+require('explorer')
 require('completion')
 

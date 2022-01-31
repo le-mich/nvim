@@ -5,14 +5,26 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('paq') {
-	-- lightline
-	'itchyny/lightline.vim';
+	-- status line
+	'nvim-lualine/lualine.nvim';
 
 	-- colorscheme
 	'haishanh/night-owl.vim';
 
-	-- line numbers
+	-- smarter line numbers
 	'jeffkreeftmeijer/vim-numbertoggle';
+
+	-- startup screen
+	'goolord/alpha-nvim';
+
+	-- save sessions
+	'rmagatti/auto-session';
+
+	-- file explorer
+	'kyazdani42/nvim-tree.lua';
+
+	-- file icons
+	'kyazdani42/nvim-web-devicons';
 
 	-- better terminal
 	'vimlab/split-term.vim';
@@ -20,7 +32,7 @@ require('paq') {
 	-- code autoformatting
 	'Chiel92/vim-autoformat';
 
-	-- auto pairs
+	-- mini plugins
 	'echasnovski/mini.nvim';
 
 	-- LSP
