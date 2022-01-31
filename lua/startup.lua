@@ -19,7 +19,7 @@ dashboard.section.header.val = {
 -- set available buttons
 dashboard.section.buttons.val = {
 	dashboard.button('n', '  > New file', ':enew<CR>'),
-	dashboard.button('r', '  > Restore session', ':RestoreSession<CR>'),
+	dashboard.button('r', '  > Restore session', ':silent RestoreSession<CR>'),
 	dashboard.button('d', '  > Explore directory', ':NvimTreeOpen<CR>'),
 	dashboard.button('s', '  > Settings', ':e $MYVIMRC<CR>'),
 	dashboard.button('q', '  > Quit NVIM', ':q<CR>'),
