@@ -29,6 +29,7 @@
 --
 
 require('general')
+require('movement')
 require('plugins')
 require('style')
 require('startup')

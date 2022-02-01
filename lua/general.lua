@@ -15,6 +15,9 @@ vim.o.mouse = 'a'
 vim.o.splitbelow = true
 vim.o.splitright = true
 
+-- use zsh as shell
+vim.o.shell = 'zsh'
+
 -- copy to clipboard
 vim.o.clipboard = vim.o.clipboard .. 'unnamedplus'
 
