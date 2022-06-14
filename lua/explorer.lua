@@ -1,10 +1,10 @@
--- show git highlighting
-vim.g.nvim_tree_git_hl = 1
-
 -- enable nvim-tree file explorer
 require('nvim-tree').setup {
 	update_cwd = true,
-	open_on_tab = true
+	open_on_tab = true,
+	renderer = {
+		highlight_git = true
+	}
 }
 
 -- set keymap
