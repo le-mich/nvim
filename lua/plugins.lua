@@ -8,8 +8,13 @@ require('paq') {
 	-- status line
 	'nvim-lualine/lualine.nvim';
 
-	-- colorscheme
-	'haishanh/night-owl.vim';
+	-- buffer line
+	'romgrk/barbar.nvim';
+
+	-- wal colorscheme, aid and framework
+	'rktjmp/shipwright.nvim';
+	'rktjmp/lush.nvim';
+	'oncomouse/lushwal.nvim';
 
 	-- smarter line numbers
 	'jeffkreeftmeijer/vim-numbertoggle';
