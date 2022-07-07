@@ -31,6 +31,9 @@ require('paq') {
 	-- file icons
 	'kyazdani42/nvim-web-devicons';
 
+	-- zen mode
+	'folke/zen-mode.nvim';
+
 	-- better terminal
 	'vimlab/split-term.vim';
 
