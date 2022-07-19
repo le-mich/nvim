@@ -6,7 +6,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- remove search result highlight with <esc><esc>
-vim.api.nvim_set_keymap('n', '<esc><esc>', ':silent! nohls<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<esc><esc>', ':silent! nohls<CR>', {noremap = true, silent = true})
 
 -- enable mouse interactions
 vim.o.mouse = 'a'
@@ -59,6 +59,9 @@ require('mini.pairs').setup()
 
 -- enable surround pairs
 require('mini.surround').setup()
+
+-- enable autocomment
+require('mini.comment').setup()
 
 -- remove numbers in terminal
 vim.cmd('autocmd TermOpen * set nonumber')
