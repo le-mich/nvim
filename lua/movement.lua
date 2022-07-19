@@ -1,21 +1,24 @@
+local map  = vim.api.nvim_set_keymap
+local opts = {noremap = true, silent = true}
+
 -- navigate windows with ALT+{h,j,k,l} in any mode
 -- from terminal
-vim.api.nvim_set_keymap('t', '<A-h>', '<C-\\><C-N><C-w>h', {noremap = true})
-vim.api.nvim_set_keymap('t', '<A-j>', '<C-\\><C-N><C-w>j', {noremap = true})
-vim.api.nvim_set_keymap('t', '<A-k>', '<C-\\><C-N><C-w>k', {noremap = true})
-vim.api.nvim_set_keymap('t', '<A-l>', '<C-\\><C-N><C-w>l', {noremap = true})
+map('t', '<A-h>', '<C-\\><C-N><C-w>h', opts)
+map('t', '<A-j>', '<C-\\><C-N><C-w>j', opts)
+map('t', '<A-k>', '<C-\\><C-N><C-w>k', opts)
+map('t', '<A-l>', '<C-\\><C-N><C-w>l', opts)
 
 -- from insert
-vim.api.nvim_set_keymap('i', '<A-h>', '<C-\\><C-N><C-w>h', {noremap = true})
-vim.api.nvim_set_keymap('i', '<A-j>', '<C-\\><C-N><C-w>j', {noremap = true})
-vim.api.nvim_set_keymap('i', '<A-k>', '<C-\\><C-N><C-w>k', {noremap = true})
-vim.api.nvim_set_keymap('i', '<A-l>', '<C-\\><C-N><C-w>l', {noremap = true})
+map('i', '<A-h>', '<C-\\><C-N><C-w>h', opts)
+map('i', '<A-j>', '<C-\\><C-N><C-w>j', opts)
+map('i', '<A-k>', '<C-\\><C-N><C-w>k', opts)
+map('i', '<A-l>', '<C-\\><C-N><C-w>l', opts)
 
 -- from normal
-vim.api.nvim_set_keymap('n', '<A-h>', '<C-w>h', {noremap = true})
-vim.api.nvim_set_keymap('n', '<A-j>', '<C-w>j', {noremap = true})
-vim.api.nvim_set_keymap('n', '<A-k>', '<C-w>k', {noremap = true})
-vim.api.nvim_set_keymap('n', '<A-l>', '<C-w>l', {noremap = true})
+map('n', '<A-h>', '<C-w>h', opts)
+map('n', '<A-j>', '<C-w>j', opts)
+map('n', '<A-k>', '<C-w>k', opts)
+map('n', '<A-l>', '<C-w>l', opts)
 
 -- exit terminal insert mode
-vim.api.nvim_set_keymap('t', '<A-e>', '<C-\\><C-N>', {noremap = true})
+map('t', '<A-e>', '<C-\\><C-N>', opts)
