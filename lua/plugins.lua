@@ -1,56 +1,82 @@
-local install_path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	vim.fn.system({'git', 'clone', '--depth=1', 'https://github.com/savq/paq-nvim.git', install_path})
+  packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-require('paq') {
+require('packer').startup(function(use)
+	-- packer itself
+	use 'wbthomason/packer.nvim'
+
 	-- status line
-	'nvim-lualine/lualine.nvim';
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = {'kyazdani42/nvim-web-devicons'}
+	}
 
 	-- buffer line
-	'romgrk/barbar.nvim';
+	use {
+		'romgrk/barbar.nvim',
+		requires = {'kyazdani42/nvim-web-devicons'}
+	}
 
 	-- wal colorscheme, aid and framework
-	'rktjmp/shipwright.nvim';
-	'rktjmp/lush.nvim';
-	'oncomouse/lushwal.nvim';
+	use {
+		'oncomouse/lushwal.nvim',
+		requires = {
+			{'rktjmp/shipwright.nvim', opt = true},
+			{'rktjmp/lush.nvim', opt = true}
+		}
+	}
 
 	-- smarter line numbers
-	'jeffkreeftmeijer/vim-numbertoggle';
+	use 'jeffkreeftmeijer/vim-numbertoggle'
 
 	-- startup screen
-	'goolord/alpha-nvim';
+	use 'goolord/alpha-nvim'
 
 	-- save sessions
-	'rmagatti/auto-session';
+	use 'rmagatti/auto-session'
 
 	-- file explorer
-	'kyazdani42/nvim-tree.lua';
-
-	-- file icons
-	'kyazdani42/nvim-web-devicons';
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = {'kyazdani42/nvim-web-devicons'}
+	}
 
 	-- zen mode
-	'folke/zen-mode.nvim';
+	use {'folke/zen-mode.nvim', opt = true}
 
 	-- better terminal
-	'vimlab/split-term.vim';
+	use 'vimlab/split-term.vim'
 
 	-- code autoformatting
-	'Chiel92/vim-autoformat';
+	use {'Chiel92/vim-autoformat', opt = true}
 
 	-- mini plugins
-	'echasnovski/mini.nvim';
+	use 'echasnovski/mini.nvim'
 
 	-- LSP
-	'neovim/nvim-lspconfig';
+	use {'neovim/nvim-lspconfig', opt = true}
 
 	-- autocompletion
-	{'ms-jpq/coq_nvim', branch='coq'};
-	{'ms-jpq/coq.artifacts', branch='artifacts'};
+	use {
+		'ms-jpq/coq_nvim', branch='coq',
+		run = ':COQdeps', opt = true,
+		requires = {
+			{'ms-jpq/coq.artifacts', branch='artifacts', opt = true}
+		}
+	}
 
 	-- markdown previewer
-	{'iamcco/markdown-preview.nvim', run = vim.fn["mkdp#util#install"], opt = true};
-}
+	use {
+		'iamcco/markdown-preview.nvim', ft = { 'markdown' },
+		run = function() vim.fn["mkdp#util#install"]() end, opt = true
+	}
+
+	-- automatically setup configuration after bootstrapping packer
+	if packer_bootstrap then
+		require('packer').sync()
+	end
+end)
 
