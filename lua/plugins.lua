@@ -49,5 +49,8 @@ require('paq') {
 	-- autocompletion
 	{'ms-jpq/coq_nvim', branch='coq'};
 	{'ms-jpq/coq.artifacts', branch='artifacts'};
+
+	-- markdown previewer
+	{'iamcco/markdown-preview.nvim', run = vim.fn["mkdp#util#install"], opt = true};
 }
 
